@@ -1,0 +1,9 @@
+[
+    {
+        "caption": "Translit: Russian Cyrrilic (GOST 7.79)",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "gost779.dict"
+        }
+    }
+]
