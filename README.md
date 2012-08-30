@@ -57,7 +57,7 @@ Example:
 
     [
         {
-            "caption": "Translit: Russian Cyrrilic (GOST 7.79)",
+            "caption": "Translit: Russian Cyrillic (GOST 7.79)",
             "command": "transliterate_selection", "args":
             {
                 "dictionary_file": "dictionary_name.sublime-commands"
