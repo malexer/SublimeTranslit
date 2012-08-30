@@ -1,5 +1,5 @@
 {
-    "name": "Cyrillic (russian)",
+    "name": "Cyrillic (russian, belarusian)",
     "description": "GOST 7.79 System B, modified ISO 9:1995",
     "link": "http://en.wikipedia.org/wiki/ISO_9",
     "chars_mapping":
@@ -31,12 +31,13 @@
         "Ch":  "\u0427",
         "Sh":  "\u0428",
         "Shh": "\u0429",
-        "\"":  "\u042a",
-        "Y":   "\u042b",
-        "'":   "\u042c",
-        "Eh":  "\u042d",
+        "``":  "\u042a",
+        "Y`":  "\u042b",
+        "`":   "\u042c",
+        "E`":  "\u042d",
         "Yu":  "\u042e",
         "Ya":  "\u042f",
+        "U`":  "\u040e",
         "a":   "\u0430",
         "b":   "\u0431",
         "v":   "\u0432",
@@ -64,12 +65,13 @@
         "ch":  "\u0447",
         "sh":  "\u0448",
         "shh": "\u0449",
-        "\"":  "\u044a",
-        "y":   "\u044b",
-        "'":   "\u044c",
-        "eh":  "\u044d",
+        "``":  "\u044a",
+        "y`":  "\u044b",
+        "`":   "\u044c",
+        "e`":  "\u044d",
         "yu":  "\u044e",
         "ya":  "\u044f",
+        "u`":  "\u045e",
         "#":   "\u2116"
     }
 }
