@@ -4,6 +4,8 @@
 import sublime
 import sublime_plugin
 
+import sys
+ST2 = sys.version_info < (3, 3)
 
 class TransliterateSelectionCommand(sublime_plugin.TextCommand):
     def run(self, edit, dictionary_file):
@@ -12,14 +14,17 @@ class TransliterateSelectionCommand(sublime_plugin.TextCommand):
 
         # invert dict
         # reason: it was a problem loading dict with unicode keys in sublime
-        dictionary = dict([[v, k] for k, v in dictionary.iteritems()])
+        dictionary = dict([[v, k] for k, v in dictionary.items()])
 
         selections = self.view.sel()
-        edit = self.view.begin_edit('transliterate_selection')
+
+        if ST2: edit = self.view.begin_edit('transliterate_selection')
+
         for sel in selections:
             selection_text = self.view.substr(sel)
             self.view.replace(edit, sel, translit(selection_text, dictionary))
-        self.view.end_edit(edit)
+
+        if ST2: self.view.end_edit(edit)
 
 
 def translit(input_string, dictionary):
