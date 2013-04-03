@@ -1,7 +1,7 @@
 [
     {
-        "caption": "Translit: Ukrainian Cyrillic (GOST 7.79b)",
-        "command": "transliterate_selection", "args":
+        "caption": "Transliterate: Ukrainian Cyrillic (GOST 7.79b)",
+        "command": "transliterate", "args":
         {
             "dictionary_file": "gost779b_ukr.dict"
         }

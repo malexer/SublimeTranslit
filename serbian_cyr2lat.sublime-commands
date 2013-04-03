@@ -1,7 +1,7 @@
 [
     {
-        "caption": "Translit: Serbian Cyrillic -> Latin",
-        "command": "transliterate_selection", "args":
+        "caption": "Transliterate: Serbian Cyrillic -> Latin",
+        "command": "transliterate", "args":
         {
             "dictionary_file": "serbian_cyr2lat.dict"
         }

@@ -1,7 +1,7 @@
 [
     {
-        "caption": "Translit: Russian/Belarusian Cyrillic (GOST 7.79b)",
-        "command": "transliterate_selection", "args":
+        "caption": "Transliterate: Russian/Belarusian Cyrillic (GOST 7.79b)",
+        "command": "transliterate", "args":
         {
             "dictionary_file": "gost779b_rus.dict"
         }

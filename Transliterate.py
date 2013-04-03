@@ -1,13 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import sublime
 import sublime_plugin
 
 import sys
 ST2 = sys.version_info < (3, 3)
 
-class TransliterateSelectionCommand(sublime_plugin.TextCommand):
+class TransliterateCommand(sublime_plugin.TextCommand):
     def run(self, edit, dictionary_file):
         s = sublime.load_settings(dictionary_file)
         dictionary = s.get('chars_mapping')
@@ -18,14 +15,9 @@ class TransliterateSelectionCommand(sublime_plugin.TextCommand):
 
         selections = self.view.sel()
 
-        if ST2: edit = self.view.begin_edit('transliterate_selection')
-
         for sel in selections:
             selection_text = self.view.substr(sel)
             self.view.replace(edit, sel, translit(selection_text, dictionary))
-
-        if ST2: self.view.end_edit(edit)
-
 
 def translit(input_string, dictionary):
     translit_string = []
