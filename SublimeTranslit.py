@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import sublime
 import sublime_plugin
 
@@ -15,6 +12,7 @@ class TransliterateSelectionCommand(sublime_plugin.TextCommand):
         dictionary = dict([[v, k] for k, v in dictionary.items()])
 
         selections = self.view.sel()
+
         for sel in selections:
             selection_text = self.view.substr(sel)
             self.view.replace(edit, sel, translit(selection_text, dictionary))
