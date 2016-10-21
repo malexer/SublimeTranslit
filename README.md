@@ -64,3 +64,11 @@ Example:
             }
         }
     ]
+
+
+Run unittests
+=============
+
+Use nose:
+
+    $ nosetests test
