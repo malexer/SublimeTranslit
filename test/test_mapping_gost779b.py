@@ -8,10 +8,10 @@ from sublime_translit.util import invert_dict
 
 
 # Belarusian
-SOURCE_BE = (
+SOURCE_BY = (
     u"У рудога вераб'я ў сховішчы пад фатэлем ляжаць нейкія гаючыя зёлкі.")
-TRANSLIT_BE = (
-    "U rudoga verab'ya u` sxovishchy` pad fate`lem lyazhac` nejkiya gayuchy`ya"
+TRANSLIT_BY = (
+    "U rudoha verab'ya u` sxovishchy` pad fate`lem lyazhac` nejkiya hayuchy`ya"
     " zyolki.")
 
 # Russian
@@ -38,21 +38,21 @@ def load_mapping(filename):
 class Gost779bTranslitTest(TestCase):
 
     def test_belarusian_translit(self):
-        translit_table = load_mapping('gost779b_rus.dict')
+        translit_table = load_mapping('gost779b_by.json')
         self.assertEqual(
-            translit(SOURCE_BE, dictionary=translit_table),
-            TRANSLIT_BE,
+            translit(SOURCE_BY, dictionary=translit_table),
+            TRANSLIT_BY,
         )
 
     def test_russian_translit(self):
-        translit_table = load_mapping('gost779b_rus.dict')
+        translit_table = load_mapping('gost779b_ru.json')
         self.assertEqual(
             translit(SOURCE_RU, dictionary=translit_table),
             TRANSLIT_RU,
         )
 
     def test_ukrainian_translit(self):
-        translit_table = load_mapping('gost779b_ukr.dict')
+        translit_table = load_mapping('gost779b_ua.json')
         self.assertEqual(
             translit(SOURCE_UA, dictionary=translit_table),
             TRANSLIT_UA,

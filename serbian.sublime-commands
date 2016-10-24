@@ -3,7 +3,7 @@
         "caption": "Transliterate: Serbian Cyrillic",
         "command": "transliterate_selection", "args":
         {
-            "dictionary_file": "serbian.dict"
+            "dictionary_file": "serbian.json"
         }
     }
 ]
