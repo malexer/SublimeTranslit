@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Transliterate: Serbian -> Croatian",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "serbian_croatian.json",
+            "invert_mapping": false
+        }
+    }
+]
