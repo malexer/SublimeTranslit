@@ -22,3 +22,31 @@ class GeneralTranslitTest(TestCase):
             translit(u'фасад', dictionary=translit_table),
             'fasad',
         )
+
+    def test_multi_char_dict_untranslit(self):
+        translit_table = {
+            'Shh': u'Щ',
+            'u': u'у',
+            'k': u'к',
+            'l': u'л',
+            'a': u'а',
+        }
+
+        self.assertEqual(
+            translit('Shhuka', dictionary=translit_table),
+            u'Щука',
+        )
+
+    def test_multi_char_all_upper_untranslit(self):
+        translit_table = {
+            'Shh': u'Щ',
+            'u': u'у',
+            'k': u'к',
+            'l': u'л',
+            'a': u'а',
+        }
+
+        self.assertEqual(
+            translit('SHHuka', dictionary=translit_table),
+            u'Щука',
+        )
