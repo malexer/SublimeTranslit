@@ -1,9 +1,18 @@
 [
     {
-        "caption": "Transliterate: Belarusian Cyrillic (GOST 7.79b)",
+        "caption": "Translit: Belarusian Cyrillic -> Latin (GOST 7.79b)",
         "command": "transliterate_selection", "args":
         {
-            "dictionary_file": "gost779b_by.json"
+            "dictionary_file": "gost779b_by.json",
+            "invert_mapping": true
+        }
+    },
+    {
+        "caption": "Translit: Latin -> Belarusian Cyrillic (GOST 7.79b)",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "gost779b_by.json",
+            "invert_mapping": false
         }
     }
 ]

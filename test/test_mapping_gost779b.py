@@ -32,28 +32,49 @@ TRANSLIT_UA = (
 
 def load_mapping(filename):
     config = json.load(open(filename))
-    return invert_dict(config['chars_mapping'])
+    return config['chars_mapping']
 
 
 class Gost779bTranslitTest(TestCase):
 
-    def test_belarusian_translit(self):
-        translit_table = load_mapping('gost779b_by.json')
+    def test_belarusian_to_latin_translit(self):
+        translit_table = invert_dict(load_mapping('gost779b_by.json'))
         self.assertEqual(
             translit(SOURCE_BY, dictionary=translit_table),
             TRANSLIT_BY,
         )
 
-    def test_russian_translit(self):
-        translit_table = load_mapping('gost779b_ru.json')
+    def test_latin_to_belarusian_translit(self):
+        translit_table = load_mapping('gost779b_by.json')
+        self.assertEqual(
+            translit(TRANSLIT_BY, dictionary=translit_table),
+            SOURCE_BY,
+        )
+
+    def test_russian_to_latin_translit(self):
+        translit_table = invert_dict(load_mapping('gost779b_ru.json'))
         self.assertEqual(
             translit(SOURCE_RU, dictionary=translit_table),
             TRANSLIT_RU,
         )
 
-    def test_ukrainian_translit(self):
-        translit_table = load_mapping('gost779b_ua.json')
+    def test_latin_to_russian_translit(self):
+        translit_table = load_mapping('gost779b_ru.json')
+        self.assertEqual(
+            translit(TRANSLIT_RU, dictionary=translit_table),
+            SOURCE_RU,
+        )
+
+    def test_ukrainian_to_latin_translit(self):
+        translit_table = invert_dict(load_mapping('gost779b_ua.json'))
         self.assertEqual(
             translit(SOURCE_UA, dictionary=translit_table),
             TRANSLIT_UA,
+        )
+
+    def test_latin_to_ukrainian_translit(self):
+        translit_table = load_mapping('gost779b_ua.json')
+        self.assertEqual(
+            translit(TRANSLIT_UA, dictionary=translit_table),
+            SOURCE_UA,
         )

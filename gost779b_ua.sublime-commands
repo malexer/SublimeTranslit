@@ -1,9 +1,18 @@
 [
     {
-        "caption": "Transliterate: Ukrainian Cyrillic (GOST 7.79b)",
+        "caption": "Translit: Ukrainian Cyrillic -> Latin (GOST 7.79b)",
         "command": "transliterate_selection", "args":
         {
-            "dictionary_file": "gost779b_ua.json"
+            "dictionary_file": "gost779b_ua.json",
+            "invert_mapping": true
+        }
+    },
+    {
+        "caption": "Translit: Latin -> Ukrainian Cyrillic (GOST 7.79b)",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "gost779b_ua.json",
+            "invert_mapping": false
         }
     }
 ]

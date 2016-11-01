@@ -1,9 +1,18 @@
 [
     {
-        "caption": "Transliterate: Russian Cyrillic (GOST 7.79b)",
+        "caption": "Translit: Russian Cyrillic -> Latin (GOST 7.79b)",
         "command": "transliterate_selection", "args":
         {
-            "dictionary_file": "gost779b_ru.json"
+            "dictionary_file": "gost779b_ru.json",
+            "invert_mapping": true
+        }
+    },
+    {
+        "caption": "Translit: Latin -> Russian Cyrillic (GOST 7.79b)",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "gost779b_ru.json",
+            "invert_mapping": false
         }
     }
 ]
