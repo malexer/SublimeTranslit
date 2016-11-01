@@ -1,7 +1,7 @@
 SublimeTranslit
 ===============
 
-SublimeTranslit is a plugin for Sublime Text 2 and 3
+SublimeTranslit is a plugin for Sublime Text 3
 (http://www.sublimetext.com/3) for transliterating selected text.
 
 Intented to be used via Command Palette.
