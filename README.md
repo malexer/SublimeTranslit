@@ -58,7 +58,7 @@ Example:
             "caption": "<command name>",
             "command": "transliterate_selection", "args":
             {
-                "dictionary_file": "dictionary_name.json".
+                "dictionary_file": "dictionary_name.json",
                 "invert_mapping": false
             }
         }
