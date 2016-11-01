@@ -1,8 +1,7 @@
 SublimeTranslit
 ===============
 
-.. image:: https://travis-ci.org/malexer/SublimeTranslit.svg?branch=master
-    :target: https://travis-ci.org/malexer/SublimeTranslit
+[![build](https://travis-ci.org/malexer/SublimeTranslit.svg?branch=master)](https://travis-ci.org/malexer/SublimeTranslit)
 
 SublimeTranslit is a plugin for Sublime Text 3
 (http://www.sublimetext.com/3) for transliterating selected text.
