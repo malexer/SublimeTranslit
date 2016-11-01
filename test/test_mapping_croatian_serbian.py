@@ -4,6 +4,7 @@ import json
 from unittest import TestCase
 
 from sublime_translit import translit
+from sublime_translit.util import invert_dict
 
 
 TEXT_RS = u"Ајшо, лепото и чежњо, за љубав срца мога дођи у Хаџиће на кафу."
@@ -25,7 +26,7 @@ class CroatianSerbianTranslitTest(TestCase):
         )
 
     def test_serbian_to_croatian_translit(self):
-        translit_table = load_mapping('serbian_croatian.json')
+        translit_table = invert_dict(load_mapping('croatian_serbian.json'))
 
         self.assertEqual(
             translit(TEXT_RS, dictionary=translit_table),

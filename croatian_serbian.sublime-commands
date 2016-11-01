@@ -6,5 +6,13 @@
             "dictionary_file": "croatian_serbian.json",
             "invert_mapping": false
         }
+    },
+    {
+        "caption": "Transliterate: Serbian -> Croatian",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "croatian_serbian.json",
+            "invert_mapping": true
+        }
     }
 ]
