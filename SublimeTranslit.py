@@ -7,7 +7,7 @@ from .sublime_translit.util import invert_dict
 
 class TransliterateSelectionCommand(sublime_plugin.TextCommand):
 
-    def run(self, edit, dictionary_file, invert_mapping):
+    def run(self, edit, dictionary_file, invert_mapping=True):
         """Run Sublime Text command for transliteration.
 
         :param edit: edit object
