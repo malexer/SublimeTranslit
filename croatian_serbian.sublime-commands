@@ -1,6 +1,6 @@
 [
     {
-        "caption": "Transliterate: Croatian -> Serbian",
+        "caption": "Translit: Croatian -> Serbian",
         "command": "transliterate_selection", "args":
         {
             "dictionary_file": "croatian_serbian.json",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "caption": "Transliterate: Serbian -> Croatian",
+        "caption": "Translit: Serbian -> Croatian",
         "command": "transliterate_selection", "args":
         {
             "dictionary_file": "croatian_serbian.json",
