@@ -15,11 +15,14 @@ class Transliterator(object):
     @property
     def rules(self):
         for r in self._rules:
+            k, v = r
+            if len(k) == 0:
+                continue  # for case when char is removed and mapping inverted
+
             yield r
 
             # Handle the case when one source upper char is represented by
             # several latin chars, all uppercase. i.e. "CH" instead of "Ch"
-            k, v = r
             if len(k) > 1 and k[0].isupper():
                 yield (k.upper(), v.upper())
 
