@@ -1,8 +1,7 @@
 import sublime
 import sublime_plugin
 
-from .sublime_translit import translit
-from .sublime_translit.util import invert_dict
+from .translit import Transliterator
 
 
 class TransliterateSelectionCommand(sublime_plugin.TextCommand):
@@ -18,12 +17,11 @@ class TransliterateSelectionCommand(sublime_plugin.TextCommand):
         """
 
         mapping_config = sublime.load_settings(dictionary_file)
-        # translit mapping file has latin as a keys
-        # and target language as values
-        mapping = mapping_config.get('chars_mapping')
 
-        if invert_mapping:
-            mapping = invert_dict(mapping)
+        translit = Transliterator(
+            mapping=mapping_config.get('chars_mapping'),
+            invert=invert_mapping,
+        )
 
         selections = self.view.sel()
 
@@ -32,5 +30,5 @@ class TransliterateSelectionCommand(sublime_plugin.TextCommand):
             self.view.replace(
                 edit,
                 sel,
-                translit(selection_text, mapping)
+                translit.convert(selection_text)
             )

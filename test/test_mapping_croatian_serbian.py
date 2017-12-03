@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import json
-from unittest import TestCase
 
-from sublime_translit import translit
-from sublime_translit.util import invert_dict
+from translit import Transliterator
 
 
 TEXT_RS = u"Ајшо, лепото и чежњо, за љубав срца мога дођи у Хаџиће на кафу."
@@ -16,19 +14,13 @@ def load_mapping(filename):
     return config['chars_mapping']
 
 
-class CroatianSerbianTranslitTest(TestCase):
+class TestCroatianSerbianTranslit(object):
 
     def test_croatian_to_serbian_translit(self):
-        translit_table = load_mapping('croatian_serbian.json')
-        self.assertEqual(
-            translit(TEXT_HR, dictionary=translit_table),
-            TEXT_RS,
-        )
+        translit = Transliterator(load_mapping('croatian_serbian.json'))
+        assert translit.convert(TEXT_HR) == TEXT_RS
 
     def test_serbian_to_croatian_translit(self):
-        translit_table = invert_dict(load_mapping('croatian_serbian.json'))
-
-        self.assertEqual(
-            translit(TEXT_RS, dictionary=translit_table),
-            TEXT_HR,
-        )
+        translit = Transliterator(
+            load_mapping('croatian_serbian.json'), invert=True)
+        assert translit.convert(TEXT_RS) == TEXT_HR

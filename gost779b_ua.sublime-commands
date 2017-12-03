@@ -4,7 +4,7 @@
         "command": "transliterate_selection", "args":
         {
             "dictionary_file": "gost779b_ua.json",
-            "invert_mapping": true
+            "invert_mapping": false
         }
     },
     {
@@ -12,7 +12,7 @@
         "command": "transliterate_selection", "args":
         {
             "dictionary_file": "gost779b_ua.json",
-            "invert_mapping": false
+            "invert_mapping": true
         }
     }
 ]
