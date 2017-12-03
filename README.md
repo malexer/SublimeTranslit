@@ -71,6 +71,6 @@ is useful to use one mapping file to define two transliterations (both sides).
 Run unittests
 =============
 
-Use nose:
+Using pytest:
 
-    $ nosetests test
+    $ pytest
