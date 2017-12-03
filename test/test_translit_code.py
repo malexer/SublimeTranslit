@@ -32,3 +32,14 @@ class TestGeneralTranslitTest(object):
             'a': u'а',
         }
         assert Transliterator(translit_table).convert('SHHuka') == u'Щука'
+
+    def test_many_to_one_lat_char_mapping(self):
+        translit_table = {
+            u'е': 'e',
+            u'ё': 'e',
+            u'э': 'e',
+        }
+        translit = Transliterator(translit_table)
+        assert translit.convert(u'эёе') == 'eee'
+        translit = Transliterator(translit_table, invert=True)
+        assert translit.convert('e') in (u'е', u'ё', u'э')
