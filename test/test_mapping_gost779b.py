@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import json
-from unittest import TestCase
 
 from sublime_translit import translit
 from sublime_translit.util import invert_dict
@@ -35,46 +34,28 @@ def load_mapping(filename):
     return config['chars_mapping']
 
 
-class Gost779bTranslitTest(TestCase):
+class TestGost779bTranslit(object):
 
     def test_belarusian_to_latin_translit(self):
         translit_table = invert_dict(load_mapping('gost779b_by.json'))
-        self.assertEqual(
-            translit(SOURCE_BY, dictionary=translit_table),
-            TRANSLIT_BY,
-        )
+        assert translit(SOURCE_BY, dictionary=translit_table) == TRANSLIT_BY
 
     def test_latin_to_belarusian_translit(self):
         translit_table = load_mapping('gost779b_by.json')
-        self.assertEqual(
-            translit(TRANSLIT_BY, dictionary=translit_table),
-            SOURCE_BY,
-        )
+        assert translit(TRANSLIT_BY, dictionary=translit_table) == SOURCE_BY
 
     def test_russian_to_latin_translit(self):
         translit_table = invert_dict(load_mapping('gost779b_ru.json'))
-        self.assertEqual(
-            translit(SOURCE_RU, dictionary=translit_table),
-            TRANSLIT_RU,
-        )
+        assert translit(SOURCE_RU, dictionary=translit_table) == TRANSLIT_RU
 
     def test_latin_to_russian_translit(self):
         translit_table = load_mapping('gost779b_ru.json')
-        self.assertEqual(
-            translit(TRANSLIT_RU, dictionary=translit_table),
-            SOURCE_RU,
-        )
+        assert translit(TRANSLIT_RU, dictionary=translit_table) == SOURCE_RU
 
     def test_ukrainian_to_latin_translit(self):
         translit_table = invert_dict(load_mapping('gost779b_ua.json'))
-        self.assertEqual(
-            translit(SOURCE_UA, dictionary=translit_table),
-            TRANSLIT_UA,
-        )
+        assert translit(SOURCE_UA, dictionary=translit_table) == TRANSLIT_UA
 
     def test_latin_to_ukrainian_translit(self):
         translit_table = load_mapping('gost779b_ua.json')
-        self.assertEqual(
-            translit(TRANSLIT_UA, dictionary=translit_table),
-            SOURCE_UA,
-        )
+        assert translit(TRANSLIT_UA, dictionary=translit_table) == SOURCE_UA
