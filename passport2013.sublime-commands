@@ -6,13 +6,5 @@
             "dictionary_file": "passport2013.json",
             "invert_mapping": false
         }
-    },
-    {
-        "caption": "Translit: Latin -> Russian Cyrillic (Passport 2013)",
-        "command": "transliterate_selection", "args":
-        {
-            "dictionary_file": "passport2013.json",
-            "invert_mapping": true
-        }
     }
 ]
