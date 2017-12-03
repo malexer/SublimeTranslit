@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from sublime_translit import translit
+from translit import Transliterator
 
 
 class TestGeneralTranslitTest(object):
 
     def test_single_char_dict_translit(self):
         translit_table = dict(a='z', s='x', d='c', f='v')
-        assert translit('sdaf', dictionary=translit_table) == 'xczv'
+        assert Transliterator(translit_table).convert('sdaf') == 'xczv'
 
     def test_single_cyrillic_char_dict_translit(self):
         translit_table = {u'а': 'a', u'с': 's', u'д': 'd', u'ф': 'f'}
-        assert translit(u'фасад', dictionary=translit_table) == 'fasad'
+        assert Transliterator(translit_table).convert(u'фасад') == 'fasad'
 
     def test_multi_char_dict_untranslit(self):
         translit_table = {
@@ -21,7 +21,7 @@ class TestGeneralTranslitTest(object):
             'l': u'л',
             'a': u'а',
         }
-        assert translit('Shhuka', dictionary=translit_table) == u'Щука'
+        assert Transliterator(translit_table).convert('Shhuka') == u'Щука'
 
     def test_multi_char_all_upper_untranslit(self):
         translit_table = {
@@ -31,4 +31,4 @@ class TestGeneralTranslitTest(object):
             'l': u'л',
             'a': u'а',
         }
-        assert translit('SHHuka', dictionary=translit_table) == u'Щука'
+        assert Transliterator(translit_table).convert('SHHuka') == u'Щука'
