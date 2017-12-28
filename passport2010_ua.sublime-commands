@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Translit: Ukrainian Cyrillic -> Latin (Passport 2010)",
+        "command": "transliterate_selection", "args":
+        {
+            "dictionary_file": "passport2010_ua.json",
+            "invert_mapping": false
+        }
+    }
+]
